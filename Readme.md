@@ -50,16 +50,16 @@ Il repository include tutti i capitoli della tesi in formato Markdown. È possib
 
 ## Autori
 
-[Massimo Ghiani]
+Massimo Ghiani
 
 ## Licenza
 
-[MIT]
+MIT
 
 ## Contatti
 
-[m.ghiani@gmail.com]
+m.ghiani@gmail.com
 
 ---
 
-© [2023] [Massimo Ghiani]. Tutti i diritti riservati.
+© 2023 Massimo Ghiani. Tutti i diritti riservati.
