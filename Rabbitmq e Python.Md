@@ -18,7 +18,7 @@ pip install pika
 
 Una volta installata, la configurazione iniziale richiede di stabilire una connessione con il server RabbitMQ, che può essere locale o remoto. Si crea quindi un'istanza di pika.ConnectionParameters fornendo l'indirizzo del server RabbitMQ, le credenziali di accesso e altre eventuali configurazioni specifiche.
 
-Produttori di Messaggi (Publishers)
+### Produttori di Messaggi (Publishers)
 
 Creazione di un Produttore
 Un produttore in Python utilizzando pika è relativamente semplice da implementare. Il produttore stabilisce una connessione con RabbitMQ, crea un canale, dichiara un exchange e pubblica i messaggi.
@@ -43,7 +43,7 @@ connection.close()
 
 Questo esempio mostra come inviare un messaggio a un exchange logs di tipo fanout, che distribuirà il messaggio a tutte le code collegate.
 
-Consumatori di Messaggi (Consumers)
+### Consumatori di Messaggi (Consumers)
 
 Creazione di un Consumatore
 Un consumatore in Python utilizzando pika richiede la creazione di un canale e la sottoscrizione a una coda. Il consumatore rimane in ascolto dei messaggi provenienti da RabbitMQ e li elabora.
@@ -76,7 +76,7 @@ channel.start_consuming()
 
 In questo esempio, il consumatore si collega all'exchange logs e rimane in attesa di messaggi, elaborandoli tramite la funzione callback.
 
-Gestione Avanzata
+### Gestione Avanzata
 
 Conferma dei Messaggi e Qualità del Servizio (QoS)
 La gestione avanzata dei messaggi include la conferma dei messaggi (acknowledgements) per assicurare che ogni messaggio sia stato correttamente ricevuto e processato. Inoltre, la configurazione della Qualità del Servizio (QoS) consente di controllare il flusso di messaggi in entrata, limitando il numero di messaggi non confermati sul canale.
@@ -99,6 +99,6 @@ channel.basic_consume(
 Gestione delle Eccezioni e Connessioni Persistenti
 Gestire le eccezioni e mantenere connessioni persistenti sono aspetti critici per garantire la stabilità e l'affidabilità del sistema. È importante implementare una logica di riconnessione in caso di interruzioni e gestire adeguatamente le eccezioni durante la comunicazione con RabbitMQ.
 
-Conclusione
+### Conclusione
 
 L'integrazione di RabbitMQ in Python attraverso la libreria pika apre le porte a un'ampia gamma di possibilità per la costruzione di sistemi di messaggistica efficienti e scalabili. Con pika, gli sviluppatori possono implementare soluzioni sofisticate che sfruttano pienamente le capacità di RabbitMQ, garantendo al tempo stesso facilità di sviluppo e manutenzione grazie alla semplicità e potenza di Python.
