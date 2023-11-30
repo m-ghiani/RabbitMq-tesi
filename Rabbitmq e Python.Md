@@ -14,6 +14,7 @@ L'installazione di `pika` può essere facilmente effettuata tramite pip:
 
 ```bash
 pip install pika
+```
 
 Una volta installata, la configurazione iniziale richiede di stabilire una connessione con il server RabbitMQ, che può essere locale o remoto. Si crea quindi un'istanza di pika.ConnectionParameters fornendo l'indirizzo del server RabbitMQ, le credenziali di accesso e altre eventuali configurazioni specifiche.
 
@@ -38,6 +39,7 @@ channel.basic_publish(exchange='logs', routing_key='', body=message)
 
 print(f" [x] Sent {message}")
 connection.close()
+```
 
 Questo esempio mostra come inviare un messaggio a un exchange logs di tipo fanout, che distribuirà il messaggio a tutte le code collegate.
 
@@ -70,6 +72,7 @@ channel.basic_consume(
 
 print(' [*] Waiting for messages. To exit press CTRL+C')
 channel.start_consuming()
+```
 
 In questo esempio, il consumatore si collega all'exchange logs e rimane in attesa di messaggi, elaborandoli tramite la funzione callback.
 
@@ -91,7 +94,7 @@ def callback(ch, method, properties, body):
 channel.basic_qos(prefetch_count=1)
 channel.basic_consume(
     queue=queue_name, on_message_callback=callback, auto_ack=False)
-
+```
 
 Gestione delle Eccezioni e Connessioni Persistenti
 Gestire le eccezioni e mantenere connessioni persistenti sono aspetti critici per garantire la stabilità e l'affidabilità del sistema. È importante implementare una logica di riconnessione in caso di interruzioni e gestire adeguatamente le eccezioni durante la comunicazione con RabbitMQ.
